@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net" modified="2026-09-08T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="Netflix HLD" id="netflix-hld-page1">
+    <mxGraphModel dx="1600" dy="1000" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1300" pageHeight="1700" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- TITLE -->
+        <mxCell id="title" value="Netflix - High Level Design" style="text;html=1;fontSize=26;fontStyle=1;align=center;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="0" width="1200" height="40" as="geometry" />
+        </mxCell>
+
+        <!-- ROW 1: Client / CDN / LB / API Gateway -->
+        <mxCell id="client" value="Client Devices&#10;(Web / Mobile / Smart TV)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="60" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="cdn" value="CDN&#10;(Open Connect Edge Cache)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="280" y="60" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lb" value="Load Balancer" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="520" y="60" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="gateway" value="API Gateway" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="60" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ROW 2: Microservices -->
+        <mxCell id="auth" value="Auth Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="180" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="userprofile" value="User Profile Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="220" y="180" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="catalog" value="Catalog Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="180" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="streaming" value="Streaming / Playback Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="180" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="reco" value="Recommendation Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="180" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="billing" value="Billing / Subscription Service" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="940" y="180" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ROW 3: Support infra -->
+        <mxCell id="cache" value="Cache&#10;(Redis / EVCache)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kafka" value="Message Queue&#10;(Kafka)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="220" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="search" value="Search Index&#10;(Elasticsearch)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="objstore" value="Object Storage&#10;(S3 - encoded video files)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="580" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="encoder" value="Video Encoding&#10;Pipeline" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="760" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="analytics" value="Analytics / Data&#10;Warehouse" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="940" y="300" width="150" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- ROW 4: Databases -->
+        <mxCell id="userdb" value="User DB&#10;(MySQL - accounts, profiles)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="420" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="metadb" value="Metadata DB&#10;(MySQL - catalog, titles)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="240" y="420" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="historydb" value="Viewing History DB&#10;(Cassandra - watch/resume)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="440" y="420" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="billingdb" value="Billing DB&#10;(MySQL - payments, plans)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="640" y="420" width="180" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="recodb" value="Recommendation Store&#10;(Cassandra / Feature Store)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="840" y="420" width="180" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- EDGES -->
+        <mxCell id="e1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="client" target="cdn"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="cdn" target="lb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="lb" target="gateway"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="gateway" target="auth"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="gateway" target="userprofile"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="gateway" target="catalog"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="gateway" target="streaming"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="gateway" target="reco"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="gateway" target="billing"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="auth" target="userdb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="catalog" target="metadb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="streaming" target="historydb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="billing" target="billingdb"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="reco" target="recodb"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <mxCell id="e15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="streaming" target="cache"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e16" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="catalog" target="search"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e17" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="streaming" target="objstore"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="objstore" target="cdn"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="encoder" target="objstore"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="streaming" target="kafka"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e21" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="kafka" target="analytics"><mxGeometry relative="1" as="geometry"/></mxCell>
+        <mxCell id="e22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" edge="1" parent="1" source="analytics" target="reco"><mxGeometry relative="1" as="geometry"/></mxCell>
+
+        <!-- FUNCTIONAL REQUIREMENTS BOX -->
+        <mxCell id="fr" value="Functional Requirements&#10;&#10;1. Users can sign up, log in, and manage multiple profiles under one account.&#10;2. Users can browse and search the video catalog by title, genre, or actor.&#10;3. Users can stream video content with adaptive bitrate based on network conditions.&#10;4. System provides personalized recommendations based on viewing history.&#10;5. Users can resume playback from the last watched position across devices." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="540" width="580" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- NON FUNCTIONAL REQUIREMENTS BOX -->
+        <mxCell id="nfr" value="Non-Functional Requirements&#10;&#10;1. High availability - target 99.99% uptime globally.&#10;2. Low latency - video start time under 100ms, minimal buffering.&#10;3. Scalability - support 200M+ registered users and millions of concurrent streams.&#10;4. Durability - zero data loss for video assets and user data (replicated storage).&#10;5. Global reach - low-latency content delivery via geographically distributed CDN edge nodes." style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="540" width="580" height="200" as="geometry" />
+        </mxCell>
+
+        <!-- DATABASE DESIGN BOX -->
+        <mxCell id="dbbox" value="Database Design&#10;&#10;- User DB (MySQL/RDBMS): user_id, email, password_hash, plan, profiles[]&#10;- Metadata DB (MySQL): title_id, name, genre, cast, description, encoding_urls&#10;- Viewing History DB (Cassandra, high write throughput): user_id, title_id, timestamp, playback_position&#10;- Billing DB (MySQL): user_id, plan_id, payment_method, invoice_history&#10;- Recommendation Store (Cassandra/Feature Store): user_id, embeddings, watch_signals&#10;- Search Index (Elasticsearch): denormalized title metadata for fast search" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="760" width="580" height="220" as="geometry" />
+        </mxCell>
+
+        <!-- CAPACITY ESTIMATION BOX -->
+        <mxCell id="capbox" value="Capacity / Envelope Estimation&#10;&#10;Assumptions: 250M total users, 40% DAU = 100M daily active users&#10;- Concurrent streams (peak, ~20% of DAU): ~20M concurrent streams&#10;- Avg bitrate per stream: 5 Mbps (HD) -&gt; Peak bandwidth: 20M x 5Mbps = 100 Tbps (served mostly via CDN edge caches)&#10;- Avg video size: 1-4 GB/title (encoded in multiple resolutions/codecs)&#10;- Catalog size: ~15,000 titles x multiple encodes x avg 3GB = several PB of raw storage&#10;- Metadata QPS: ~50K-100K reads/sec at peak (search + browse)&#10;- Viewing history writes: 100M DAU x ~5 events/session = ~500M writes/day (~6K writes/sec avg, higher at peak)&#10;- Storage growth: assume 500 new/updated titles per month x 3GB avg x multiple encodes = tens of TB/month" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=10;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="660" y="760" width="580" height="220" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
